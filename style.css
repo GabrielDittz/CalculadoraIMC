@@ -75,6 +75,7 @@ main{
     padding: 20px;
     box-sizing: border-box;
     user-select: none;
+    text-align: justify;
   }
 
   footer{
