@@ -14,24 +14,27 @@ function imc () {
 
   if(nome !== '' && peso !== '' && altura !== ''){
     const imc =  (peso / (altura * altura)).toFixed(1);
-    const peso_ideal = '';
+    const peso_min = (18.5*(altura**2).toFixed(1));
+    const peso_max = (25*(altura**2).toFixed(1));
     let classificacao = '';
+
+   
 
     if(imc < 18.5){
       classificacao = 'abaixo do peso' 
     }else if(imc > 18.5 && imc < 24.9){
-      classificacao = 'com o peso adequado'
+      classificacao = 'com o peso adequado'      
     }else if(imc > 24.9 && imc < 29.9){
-      classificacao = 'com sobrepeso'
+      classificacao = 'com sobrepeso'    
     }else if(imc > 29.9 && imc < 34.9){
-      classificacao = 'com obesidade grau 1'
+      classificacao = 'com obesidade grau 1'     
     }else if(imc > 34.9 && imc < 39.9){
-      classificacao = 'com obesidade grau 2'
+      classificacao = 'com obesidade grau 2'     
     }else{
-      classificacao = 'com obesidade grau 3'
+      classificacao = 'com obesidade grau 3'    
     }
-
-    resultado.textContent = `Olá ${nome}!!! Com ${peso}Kg e ${altura}m seu imc é ${imc} e você está ${classificacao}.`;
+    
+    resultado.textContent = `Olá ${nome}!!! Com ${peso}Kg e ${altura}m seu imc é ${imc} e você está ${classificacao}.Procure manter o seu peso entre ${peso_min}kg e ${peso_max}kg`;
   }else{
     resultado.textContent = 'Preencha todos os campos!!!';
   }
